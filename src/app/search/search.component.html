@@ -1,0 +1,54 @@
+<a class="btn-close" (click)="closeAndOpen(anchorElement)" #anchorElement> Close</a>
+<h3 class="searchLabel" #h3 [ngClass]="h3Classes">SEARCH</h3>
+<div class="header" [ngClass]="openClasses" #form>
+  <div>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)" (keydown.backspace)="reset()"
+          (keydown.enter)="onSubmit(searchForm.value)">
+      <div>
+        <button type="submit">Search</button>
+        <button (click)="reset()">Reset</button>
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <select id="country" formControlName="country" class="input">
+          <option *ngFor="let country of countries" value="{{country['id']}}">
+            {{country['name']}}
+          </option>
+          <option value="none">
+            --Select One--
+          </option>
+
+        </select>
+      </div>
+
+      <label for="keyword">Keyword</label>
+      <input id="keyword" type="text" formControlName="keyword" class="input">
+      <div>
+        <input type="checkbox" id="codeOfTheInter" value="Code of the intervention"
+               formControlName="codeOfTheInter">
+        <label for="codeOfTheInter">Code of the intervention</label>
+      </div>
+      <div>
+        <input type="checkbox" id="titleOfTheInter" value="Title of the intervention" formControlName="titleOfTheInter">
+        <label for="titleOfTheInter">Title of the intervention</label>
+      </div>
+      <div>
+        <input type="checkbox" id="interShortName" value="Intervention Short Name" formControlName="interShortName">
+        <label for="interShortName">Intervention Short Name</label>
+      </div>
+      <div>
+        <input type="checkbox" id="interDescription" value="Intervention Description"
+               formControlName="interDescription">
+        <label for="interDescription">Intervention Description</label>
+      </div>
+
+      <div>
+        <h2>Actual Start Date</h2>
+        <label for="from">From</label>
+        <input id="from" type="date" formControlName="from"><br>
+        <label for="to">To</label>
+        <input id="to" type="date" formControlName="to">
+      </div>
+    </form>
+  </div>
+</div>

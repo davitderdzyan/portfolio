@@ -1,0 +1,48 @@
+<div>
+  <select (ngModelChange)="filterByWfState($event)"
+          [(ngModel)]="statusId" class="select">
+    <option value="none">--select one--</option>
+    <option *ngFor="let status of workFlowStates" value="{{status['id']}}">
+      {{status["name"]}}
+    </option>
+  </select>
+  <a href="/" class="button">New Intervention</a>
+  <table>
+    <tr>
+      <th (click)="sortBy('codeOfTheInter', codeOfTheInter)">Code of the intervention
+        <span #codeOfTheInter class="arrow-up"></span>
+      </th>
+      <th (click)="sortBy( 'shortName', shortName)">Short Name<span class="arrow-up" #shortName></span></th>
+      <th (click)="sortBy( 'officialInterName',officialInterName)" class="mini">Official intervention Name<span
+        class="arrow-up"
+        #officialInterName></span></th>
+      <th (click)="sortBy( 'country', country)">Country <span class="arrow-up" #country></span></th>
+      <th (click)="sortBy( 'status', status)">Status<span class="arrow-up" #status></span></th>
+      <th (click)="sortBy( 'lastUpdatedBy',lastUpdatedBy )">Last Updated By<span class="arrow-up" #lastUpdatedBy></span>
+      </th>
+      <th (click)="sortBy( 'lastUpdatedOn', lastUpdatedOn)">Last Updated on<span class="arrow-up" #lastUpdatedOn></span>
+      </th>
+    </tr>
+    <tr
+      *ngFor="let inter of currentInterventions | paginate: { itemsPerPage: interventionsCount, currentPage: currentPage }">
+      <td class="td">
+        <a class="btn-into-td" href="/code/{{inter['id']}}">{{inter['codeOfTheInter']}}</a>
+      </td>
+      <td>{{inter['shortName']}}</td>
+      <td class="mini">{{inter['officialInterName']}}</td>
+      <td>{{inter['country'].name}}</td>
+      <td>{{inter['status'].name}}</td>
+      <td>{{inter['lastUpdatedBy'].name}}</td>
+      <td>{{inter['lastUpdatedOn'] | date:"dd-MM-yyyy"}}</td>
+
+    </tr>
+  </table>
+  <div class="main">
+    <div class="pagination-previous" *ngIf="!isFirstPage()" (click)="previousPage()"><</div>
+    <pagination-controls class="custom-pagination" [responsive]=true [directionLinks]=false
+                         (pageChange)="currentPage = $event">
+      <div>{{currentPage}}</div>
+    </pagination-controls>
+    <div class="pagination-next" *ngIf="!isLastPage()" (click)="nextPage()">></div>
+  </div>
+</div>

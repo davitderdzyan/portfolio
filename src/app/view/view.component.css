@@ -1,0 +1,30 @@
+app-search {
+  width: 15%;
+  display: inline-block;
+  height: 100%;
+}
+
+app-table {
+  width: 85%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+input {
+  display: block;
+  width: 90%;
+}
+
+a {
+  background: chartreuse;
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  float: right;
+  border: 3px solid lightgrey;
+}
+
+#open {
+  float: left;
+
+}

@@ -1,0 +1,28 @@
+
+.centralContent{
+  text-align: center;
+  padding:  0 200px;
+}
+
+.button {
+  border:1px solid black;
+  display: inline-block;
+  width:100px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  background: lightgray;
+  text-decoration: none;
+}
+p {
+  text-align: center;
+  padding:  0 200px;
+  font-size: 26px;
+  font-family: "Segoe UI", serif;
+}
+h4 {
+  text-align: center;
+  padding: 0 200px;
+  font-size: 20px;
+
+}

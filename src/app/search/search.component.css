@@ -1,0 +1,104 @@
+
+.searchLabel {
+  float: left;
+  color: black;
+  display: inline-block;
+
+}
+
+
+.btn-close {
+  display: inline-block;
+  margin: 10px;
+  float: right;
+  text-align: center;
+  font-size: larger;
+  transition: 2s ease transform;
+
+}
+.btn-open {
+  transition: 2s ease transform;
+  display: inline-block;
+  margin: 10px;
+  float: right;
+
+  text-align: center;
+  font-size: larger;
+  transform: translateX(-135px);
+}
+.input {
+  display: inline-block;
+  width: 66%;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+div {
+  display: inline-block;
+  width: 100%;
+}
+
+button {
+  background: chartreuse;
+  height: 30px;
+  width: 100px;
+  margin: 10px;
+  border:3px solid lightgrey;
+}
+
+a {
+  background: chartreuse;
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  border: 3px solid lightgrey;
+}
+
+h3 {
+  display: inline-block;
+  float: left;
+  color: white;
+}
+#header {
+  background: lightslategrey;
+  height: 56px;
+}
+div > label {
+  margin-right: 10px;
+  font-size: medium;
+}
+input, select {
+  float: right;
+
+}
+select {
+  width:150px ;
+}
+.header {
+  /*overflow: hidden;*/
+  /*transition-duration: 5000ms;*/
+  transition: 3s ease transform;
+  width: 240px;
+  display: inline-block;
+
+}
+.searchLabel {
+  position: relative;
+  width: 80px;
+  transition: 2s ease transform;
+  display: inline-block;
+
+}
+.open {
+  transform: translateX(-300px);
+}
+.close {
+
+}
+.is-not-visible {
+  transform: translateX(-300px);
+}
+
+
+
