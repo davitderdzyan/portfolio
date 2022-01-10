@@ -26,7 +26,7 @@
     <tr
       *ngFor="let inter of currentInterventions | paginate: { itemsPerPage: interventionsCount, currentPage: currentPage }">
       <td class="td">
-        <a class="btn-into-td" href="/code/{{inter['id']}}">{{inter['codeOfTheInter']}}</a>
+        <a class="btn-into-td td" href="/code/{{inter['id']}}">{{inter['codeOfTheInter']}}</a>
       </td>
       <td>{{inter['shortName']}}</td>
       <td class="mini">{{inter['officialInterName']}}</td>

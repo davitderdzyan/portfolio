@@ -14,7 +14,7 @@ import {FormGroup} from "@angular/forms";
 })
 export class TableComponent implements OnInit, OnChanges {
   //TODO change variable names please
-  interventionsCount: number = 5;
+  interventionsCount: number = 3;
   currentPage: number = 1;
   currentInterventions: Intervention[] = [];
   workFlowStates: WorkFlowState[];
